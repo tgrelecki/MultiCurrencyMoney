@@ -8,12 +8,13 @@ namespace MultiCurrencyMoney.Test
         [TestMethod]
         public void TestMultiplication()
         {
-            var five = new Dollar(5);
-            five.times(2);
+            Dollar five = new Dollar(5);
+            Dollar product = five.times(2);
+            
+            Assert.AreEqual(10, product.Amount);
 
-            Assert.AreEqual(10, five.Amount);
+            product = five.times(3);
+            Assert.AreEqual(15, product.Amount);
         }
-
-
     }
 }

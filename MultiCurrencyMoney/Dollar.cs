@@ -11,9 +11,9 @@ namespace MultiCurrencyMoney
             Amount = value;
         }
 
-        public void times(int value)
+        public Dollar times(int multiplier)
         {
-            Amount *= value;
+            return new Dollar(Amount * multiplier);
         }
     }
 }

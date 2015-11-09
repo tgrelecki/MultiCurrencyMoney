@@ -15,5 +15,11 @@ namespace MultiCurrencyMoney
         {
             return new Dollar(Amount * multiplier);
         }
+
+        public override bool Equals(object obj)
+        {
+            var dollar = (Dollar)obj;
+            return Amount == dollar.Amount;
+        }
     }
 }

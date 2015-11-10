@@ -2,10 +2,8 @@
 
 namespace MultiCurrencyMoney
 {
-    public class Dollar
+    public class Dollar : Money
     {
-        private int Amount;
-
         public Dollar(int value)
         {
             Amount = value;
@@ -14,12 +12,6 @@ namespace MultiCurrencyMoney
         public Dollar times(int multiplier)
         {
             return new Dollar(Amount * multiplier);
-        }
-
-        public override bool Equals(object obj)
-        {
-            var dollar = (Dollar)obj;
-            return Amount == dollar.Amount;
         }
     }
 }

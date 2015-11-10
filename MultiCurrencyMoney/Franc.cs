@@ -1,10 +1,7 @@
-﻿using System;
-
-namespace MultiCurrencyMoney
+﻿namespace MultiCurrencyMoney
 {
-    public class Franc
+    public class Franc : Money
     {
-        private int Amount;
 
         public Franc(int value)
         {
@@ -14,12 +11,6 @@ namespace MultiCurrencyMoney
         public Franc times(int multiplier)
         {
             return new Franc(Amount * multiplier);
-        }
-
-        public override bool Equals(object obj)
-        {
-            var dollar = (Franc)obj;
-            return Amount == dollar.Amount;
         }
     }
 }

@@ -7,7 +7,8 @@
         public override bool Equals(object obj)
         {
             var money = (Money)obj;
-            return Amount == money.Amount;
+            return Amount == money.Amount
+                && this.GetType() == obj.GetType();
         }
     }
 }

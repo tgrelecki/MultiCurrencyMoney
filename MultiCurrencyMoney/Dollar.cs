@@ -1,17 +1,15 @@
-﻿using System;
-
-namespace MultiCurrencyMoney
+﻿namespace MultiCurrencyMoney
 {
     public class Dollar : Money
     {
-        public Dollar(int value)
+        public Dollar(int value, string currency) :
+            base(value, currency)
         {
-            Amount = value;
         }
 
         public override Money Times(int multiplier)
         {
-            return new Dollar(Amount * multiplier);
+            return Money.Dollar(Amount * multiplier);
         }
     }
 }

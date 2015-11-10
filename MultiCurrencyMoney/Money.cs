@@ -2,18 +2,26 @@
 {
     public abstract class Money
     {
-        internal int Amount;
+        public string Currency { get; set; }
+
+        internal int Amount { get; set; }
+
+        public Money(int amount, string currency)
+        {
+            Amount = amount;
+            Currency = currency;
+        }
 
         public abstract Money Times(int multiplier);
 
         public static Money Dollar(int amount)
         {
-            return new Dollar(amount);
+            return new Dollar(amount, "USD");
         }
 
         public static Money Franc(int amount)
         {
-            return new Franc(amount);
+            return new Franc(amount, "CHF");
         }
 
         public override bool Equals(object obj)

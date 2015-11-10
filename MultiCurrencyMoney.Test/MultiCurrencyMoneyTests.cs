@@ -24,6 +24,12 @@ namespace MultiCurrencyMoney.Test
         }
 
         [TestMethod]
+        public void TestDifferentClassEquality()
+        {
+            Assert.AreEqual(new Money(10, "CHF"), new Franc(10, "CHF"));
+        }
+
+        [TestMethod]
         public void TestFrancMultiplication()
         {
             Money five = Money.Franc(5);

@@ -18,23 +18,7 @@ namespace MultiCurrencyMoney.Test
         {
             Assert.AreEqual(Money.Dollar(5), Money.Dollar(5));
             Assert.AreNotEqual(Money.Dollar(5), Money.Dollar(6));
-            Assert.AreEqual(Money.Franc(5), Money.Franc(5));
-            Assert.AreNotEqual(Money.Franc(5), Money.Franc(6));
             Assert.AreNotEqual(Money.Franc(5), Money.Dollar(5));
-        }
-
-        [TestMethod]
-        public void TestDifferentClassEquality()
-        {
-            Assert.AreEqual(new Money(10, "CHF"), new Franc(10, "CHF"));
-        }
-
-        [TestMethod]
-        public void TestFrancMultiplication()
-        {
-            Money five = Money.Franc(5);
-            Assert.AreEqual(Money.Franc(10), five.Times(2));
-            Assert.AreEqual(Money.Franc(15), five.Times(3));
         }
         
         [TestMethod]

@@ -9,7 +9,7 @@ namespace MultiCurrencyMoney
             Amount = value;
         }
 
-        public Dollar times(int multiplier)
+        public override Money Times(int multiplier)
         {
             return new Dollar(Amount * multiplier);
         }

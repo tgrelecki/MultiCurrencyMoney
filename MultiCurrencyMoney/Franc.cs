@@ -8,7 +8,7 @@
             Amount = value;
         }
 
-        public Franc times(int multiplier)
+        public override Money Times(int multiplier)
         {
             return new Franc(Amount * multiplier);
         }

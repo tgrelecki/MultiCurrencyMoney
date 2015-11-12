@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.Linq.Expressions;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace MultiCurrencyMoney.Test
 {
@@ -26,6 +27,16 @@ namespace MultiCurrencyMoney.Test
         {
             Assert.AreEqual("USD", Money.Dollar(1).Currency);
             Assert.AreEqual("CHF", Money.Franc(1).Currency);
+        }
+
+        [TestMethod]
+        public void TestSimpleAddition()
+        {
+            var five = Money.Dollar(5);
+            ICurrencyExpression sum = five.Plus(five);
+            Bank bank = new Bank();
+            Money reduced = bank.Reduce(sum, "USD");
+            Assert.AreEqual(Money.Dollar(10), reduced);
         }
     }
 }

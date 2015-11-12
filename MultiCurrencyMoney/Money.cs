@@ -1,6 +1,6 @@
 ﻿namespace MultiCurrencyMoney
 {
-    public class Money
+    public class Money : ICurrencyExpression
     {
         public string Currency { get; set; }
 
@@ -25,6 +25,11 @@
         public Money Times(int multiplier)
         {
             return new Money(Amount * multiplier, Currency);
+        }
+
+        public ICurrencyExpression Plus(Money addend)
+        {
+            return new Money(Amount + addend.Amount, Currency);
         }
 
         public override bool Equals(object obj)
